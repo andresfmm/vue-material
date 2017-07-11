@@ -1,0 +1,24 @@
+.main-content{
+	padding:16px;
+}
+
+.card-layout {
+  margin: 16px 15%;
+  display: flex;
+
+  .column {
+    flex: 1;
+
+    + .column {
+      margin-left: 8px;
+    }
+  }
+
+  .md-card + .md-card {
+    margin-top: 8px;
+  }
+}
+
+.md-input-container {
+  width: 100%;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta http-equiv='X-UA-Compatible' content='IE=Edge'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Aplicación para capacitaciones">
+    <meta name="author" content="Jhonier Perea, Andrés Meza, Juan Manuel Ruíz">
+    <meta name="robots" content="index, follow"/>
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="https://lh3.googleusercontent.com/-YDnMrm0230g/ViZUCMGO0dI/AAAAAAAAABk/s35FVUuAVWY/w250-h250/AJESTUDIOS.jpg">
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Title of APP">
+    <link rel="apple-touch-icon-precomposed" href="https://lh3.googleusercontent.com/-YDnMrm0230g/ViZUCMGO0dI/AAAAAAAAABk/s35FVUuAVWY/w250-h250/AJESTUDIOS.jpg">
+    <!-- Win8 -->
+    <meta name="msapplication-TileImage" content="https://lh3.googleusercontent.com/-YDnMrm0230g/ViZUCMGO0dI/AAAAAAAAABk/s35FVUuAVWY/w250-h250/AJESTUDIOS.jpg">
+    <!--  -->
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="css/vue-material.css">
+    <link rel="stylesheet" type="text/css" href="css/own.css">
+</head>
+<body>
+
+<!-- 
+<div id="app">
+  <md-toolbar>
+    <h1 class="md-title">My Title</h1>
+  </md-toolbar>
+  
+  <div class="main-content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, rerum? Error sunt, aperiam dolores, atque expedita molestiae tenetur. Quis eveniet accusamus velit explicabo adipisci reiciendis modi eaque quas, officia excepturi.</p>
+  </div>
+  <md-toolbar class="md-accent">
+  <md-button class="md-icon-button">
+    <md-icon>menu</md-icon>
+  </md-button>
+
+  <h2 class="md-title" style="flex: 1">Vue Material</h2>
+
+  <md-button class="md-icon-button">
+    <md-icon>favorite</md-icon>
+  </md-button>
+</md-toolbar>
+</div>
+ -->
+
+ <div id="app">
+ <md-theme md-name="purple">
+   <md-toolbar>
+    <h1 class="md-accent" style="flex: 1">My Title</h1>
+    <md-button class="md-accent">Accent Button</md-button>
+    <md-button class="md-icon-button">
+      <md-icon>more_vert</md-icon>
+    </md-button>
+  </md-toolbar>
+ </md-theme>
+
+<form>
+<md-input-container md-theme="orange">
+    <label>Nombre</label>
+    <md-input v-model="first_name" name="nombre"></md-input>
+ </md-input-container>
+ 
+  <md-input-container md-theme="orange">
+    <label>Apellido</label>
+    <md-input v-model="last_name" name="apellido"></md-input>
+  </md-input-container>
+
+  <md-input-container md-has-password>
+    <label>Password Reveal</label>
+    <md-input type="password"></md-input>
+  </md-input-container> 
+  <md-button  type="submit" class="md-raised md-warn" :disabled="!isFormValid()" >Login</md-button>
+  </form>
+  <h1 align="center">Bienvenido : {{first_name}} {{last_name}}</h1>
+
+
+
+ 	
+ </div>
+	
+</body>
+<script src="js/vue.js"></script>
+<script src="js/vue-material.js"></script>
+<script type="text/javascript">
+	Vue.use(VueMaterial)
+
+Vue.material.registerTheme({
+
+  orange: {
+    primary: 'orange'
+  },
+  purple: {
+    primary: 'purple',
+    accent: 'orange'
+  }
+})
+
+
+var App = new Vue({
+  el: '#app',
+  data:{
+     first_name : '',
+     last_name : ''
+  },
+  methods:{
+      isFormValid : function (){
+      	return this.first_name !='' && this.last_name !='';
+      }
+  }
+})
+
+
+</script>
+</html>
+
+
